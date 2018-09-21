@@ -10,26 +10,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/selenium-java/client-combined-3.13.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://C:/selenium-java/client-combined-3.13.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://C:/selenium-java/libs/byte-buddy-1.8.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://C:/selenium-java/libs/commons-codec-1.10.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -49,15 +29,6 @@
       <library>
         <CLASSES>
           <root url="jar://C:/selenium-java/libs/commons-logging-1.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://C:/selenium-java/libs/gson-2.8.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -103,6 +74,24 @@
       <library>
         <CLASSES>
           <root url="jar://C:/selenium-java/libs/okio-1.14.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/selenium-java/client-combined-3.14.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/selenium-java/libs/byte-buddy-1.8.15.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
