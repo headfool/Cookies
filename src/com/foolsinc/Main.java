@@ -20,11 +20,11 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         driver.get("http://orteil.dashnet.org/cookieclicker/");
         Thread.sleep(1000);
-        int jPrime=20;
+        int jPrime=30;
         int j =jPrime;
         int n =1;
         while(driver.findElement(By.id("bigCookie")).isDisplayed()) {
-            for(int h=0;h<=20;h++) {
+            for(int h=0;h<=15;h++) {
                 for (int i = 0; i < 100; i++) {
                     try {
                         driver.findElement(By.id("bigCookie")).click();
@@ -38,21 +38,33 @@ public class Main {
                 System.out.print(" h:"+h);
             }
             try {
-                driver.findElement(By.id("upgrade1")).click();
+                driver.findElement(By.id("upgrade2")).click();
             } catch (Exception d) {
             }
             System.out.println(" j: "+j);
-            try {
+            int upg;
+            if (j>14)
+                upg = 14;
+            else
+                upg = j;
+            WebElement upgrade = driver.findElement(By.id("product" + upg));
+            if (upgrade.getAttribute("class").equals("product unlocked enabled")){
+                upgrade.click();
+                jPrime++;
+                j=jPrime;
+            }
+            /*try {
                 driver.findElement(By.id("product" + j)).click();
-                //driver.findElement(By.id("product" + (j-1))).click();
-            } catch (Exception e) {}
+                Thread.sleep(2000);
+                j=j+10;
+            } catch (Exception e) {}*/
             if (j<0){
                 jPrime++;
-                System.out.print("reset J");
                 j=jPrime;
+                System.out.print("J: "+j);
             } else {
-                System.out.print(" Decreased j");
                 j--;
+                System.out.print("j: "+j);
             }
             n++;
             System.out.print(" n:"+n);
