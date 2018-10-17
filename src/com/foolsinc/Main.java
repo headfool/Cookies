@@ -20,16 +20,18 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         driver.get("http://orteil.dashnet.org/cookieclicker/");
         Thread.sleep(1000);
-        int jPrime=30;
+        int jPrime=200;
         int j =jPrime;
         int n =1;
-        while(driver.findElement(By.id("bigCookie")).isDisplayed()) {
-            for(int h=0;h<=15;h++) {
-                for (int i = 0; i < 100; i++) {
-                    try {
-                        driver.findElement(By.id("bigCookie")).click();
-                    } catch (Exception cc) {
-                    }
+        WebElement bigC = driver.findElement(By.id("bigCookie"));
+        while(bigC.isDisplayed()) {
+            for(int h=0;h<=18;h++) {
+                try {
+                    for (int i = 0; i < 100; i++) {
+                        bigC.click();
+                        bigC.click();
+                        }
+                    }catch (Exception cc) {
                 }
                 try {
                     driver.findElement(By.className("shimmer")).click();
@@ -37,9 +39,9 @@ public class Main {
                 }
                 System.out.print(" h:"+h);
             }
-            try {
-                driver.findElement(By.id("upgrade2")).click();
-            } catch (Exception d) {
+            WebElement upGrade = driver.findElement(By.id("upgrade1"));
+            if (upGrade.getAttribute("class").equals("crate upgrade enabled")) {
+                upGrade.click();
             }
             System.out.println(" j: "+j);
             int upg;
@@ -47,11 +49,11 @@ public class Main {
                 upg = 14;
             else
                 upg = j;
-            WebElement upgrade = driver.findElement(By.id("product" + upg));
-            if (upgrade.getAttribute("class").equals("product unlocked enabled")){
-                upgrade.click();
-                jPrime++;
-                j=jPrime;
+            WebElement product = driver.findElement(By.id("product" + upg));
+            if (product.getAttribute("class").equals("product unlocked enabled")){
+                product.click();
+                jPrime=jPrime+2;
+                j=j+jPrime;
             }
             /*try {
                 driver.findElement(By.id("product" + j)).click();
