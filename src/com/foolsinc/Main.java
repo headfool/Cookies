@@ -20,7 +20,7 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         driver.get("http://orteil.dashnet.org/cookieclicker/");
         Thread.sleep(1000);
-        int jPrime=200;
+        int jPrime=480;
         int j =jPrime;
         int n =1;
         WebElement bigC = driver.findElement(By.id("bigCookie"));
@@ -45,8 +45,8 @@ public class Main {
             }
             System.out.println(" j: "+j);
             int upg;
-            if (j>14)
-                upg = 14;
+            if (j>15)
+                upg = 15;
             else
                 upg = j;
             WebElement product = driver.findElement(By.id("product" + upg));
